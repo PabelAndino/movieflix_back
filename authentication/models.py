@@ -7,7 +7,7 @@ from django.contrib.auth.hashers import make_password
 
 class CustomUserManager(BaseUserManager):
 
-    def create_user(self, username, email, password, **extra_fields):
+    def _create_user(self, username, email, password, **extra_fields):
         now = timezone.now()
         if not username:
             raise ValueError("The given Username is not Valid")
